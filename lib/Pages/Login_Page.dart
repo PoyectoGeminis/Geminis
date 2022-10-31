@@ -51,8 +51,15 @@ class _LoginPageState extends State<LoginPage> {
                   height: 16.0,
                 ),
                 ElevatedButton(
-                    onPressed: (){}, 
-                    child: const Text("Iniciar Sesión")
+                   onPressed: (){
+                      user=_email.text;
+                      pwd=_password.text;
+                      if (user=="pepe@gmail.com" && pwd=="12345"){
+                        Navigator.push(context,
+                            MaterialPageRoute(builder:(context)=> Poi()) );
+                      }
+
+                    }, 
                 ),
                 const SizedBox(
                   height: 16.0,
