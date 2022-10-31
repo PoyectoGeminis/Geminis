@@ -27,8 +27,8 @@ class Poi extends StatelessWidget {
             ),
           ),
           Container(
-              width: 250,
-                height: 250,
+              width: 300,
+                height: 300,
 
                 decoration: BoxDecoration(
                   image: DecorationImage(
@@ -41,6 +41,7 @@ class Poi extends StatelessWidget {
              Container(
                 width: 350,
                 height: 300,
+                margin: EdgeInsets.only(left: 15,top: 10),
 
                 child: Text("Ciudad: Envigado"
                     "                              "
@@ -51,7 +52,7 @@ class Poi extends StatelessWidget {
                     "Descripcion: El parque se encuentra ubicado en la zona rural de Envigado, sector El Salado, cuenta con 170.000 metros cuadrados de extensión,  que lo convierte en uno de los grandes parques ecológicos de Antioquia. "
                     "Cuenta con actividades de aventura: Canopy, muro de escalada y pruebas de habilidad. Un espacio para la diversión.",
                   style: TextStyle(
-                    fontSize: 17,
+                    fontSize: 19,
                   ),
                 ),
 
@@ -63,17 +64,6 @@ class Poi extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
