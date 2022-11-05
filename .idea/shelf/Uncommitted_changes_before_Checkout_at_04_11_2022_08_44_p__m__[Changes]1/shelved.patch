@@ -1,0 +1,646 @@
+Index: lib/Pages/Mi_Sitios_Tutristicos.dart
+===================================================================
+diff --git a/lib/Pages/Mi_Sitios_Tutristicos.dart b/lib/Pages/Mi_Sitios_Tutristicos.dart
+new file mode 100644
+--- /dev/null	
++++ b/lib/Pages/Mi_Sitios_Tutristicos.dart	
+@@ -0,0 +1,36 @@
++import 'package:flutter/material.dart';
++
++class MiSitiosTuristico extends StatefulWidget {
++  const MiSitiosTuristico({Key? key}) : super(key: key);
++
++  @override
++  State<MiSitiosTuristico> createState() => _MiSitiosTuristicoState();
++}
++
++class _MiSitiosTuristicoState extends State<MiSitiosTuristico> {
++  @override
++  Widget build(BuildContext context) {
++    return Scaffold(
++      appBar: AppBar(
++        title: Text("Mis Sitios"),
++      ),
++      body: Padding(
++        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
++        child: Column(
++          children: [
++            const SizedBox(
++              height: 16.0,
++            )
++          ],
++        ),
++      ),
++      /*floatingActionButton: FloatingActionButton(
++        onPressed: (){
++          Navigator.push(context, MaterialPageRoute(builder: (context) => ListadeSitios()));
++        },
++        tooltip: "Nuevo Sitio",
++        child: const Icon(Icons.add),
++      ),*/
++    );
++  }
++}
+Index: lib/Sitios Turisticos/Poi_Page3.dart
+===================================================================
+diff --git a/lib/Sitios Turisticos/Poi_Page3.dart b/lib/Sitios Turisticos/Poi_Page3.dart
+new file mode 100644
+--- /dev/null	
++++ b/lib/Sitios Turisticos/Poi_Page3.dart	
+@@ -0,0 +1,74 @@
++import 'package:flutter/material.dart';
++import 'package:proyectopersonal/Pages/ListadeSitios.dart';
++
++class Poi3 extends StatelessWidget {
++  const Poi3({Key? key}) : super(key: key);
++
++  @override
++  Widget build(BuildContext context) {
++    return MaterialApp(
++      home: Scaffold(
++        body: Column(
++          children: [
++            Container(
++              width: 300,
++              height: 80,
++              margin: EdgeInsets.only(top: 70),
++              child: Text("Puerto Triunfo ",
++                style: TextStyle(
++                  fontSize: 30,
++                  fontFamily: "Titulos",
++                  // color: Colors.black
++                ),
++                textAlign: TextAlign.center,
++              ),
++            ),
++            Container(
++              width: 300,
++              height: 200,
++              decoration: BoxDecoration(
++                image: DecorationImage(
++                    image: AssetImage("Assets/Imagenes/PuebloTriunfo.png")
++                ),
++              ),
++            ),
++
++            Container(
++              width: 350,
++              height: 360,
++              margin: EdgeInsets.only(left: 15,top: 10),
++              child: Text("Ciudad: Magdalena Medio\n"
++                  "Departamento: Antioquia\n"
++                  "Temperatura: 25°\n"
++                  "\n"
++                  "Descripcion: Es un municipio de Colombia, localizado en la subregión del Magdalena Medio en el departamento de Antioquia."
++                "En 1944 San Luis creó un corregimiento que abarcaba los parajes de El Triunfo, El Rebozo, Bélgica, Boca de la Quebrada Cocorná; el lugar tomo el nombre de El Rebozo. En 1945 cambió por Puerto Triunfo; en 1977 recibió la categoría de Municipio durante la gestión del Gobernador Jaime Sierra García.",
++                style: TextStyle(
++                  fontSize: 19,
++                ),
++              ),
++            ),
++            Container(
++              child: ElevatedButton(
++                  style: TextButton.styleFrom(
++                    backgroundColor: Colors.blue,
++                  ),
++                  child: Text("Volver",
++                    style:TextStyle(
++                        fontSize: 22,
++                        color: Colors.white,
++                        fontFamily: "contenidos"
++                    ),
++                  ),
++                  onPressed: (){
++                    Navigator.push(context, MaterialPageRoute(builder: (context) => Listas_de_Sitios())
++                    );
++                  }
++              ),
++            )
++          ],
++        ),
++      ),
++    );
++  }
++}
+\ No newline at end of file
+Index: lib/Pages/ListadeSitios.dart
+===================================================================
+diff --git a/lib/Pages/ListadeSitios.dart b/lib/Pages/ListadeSitios.dart
+new file mode 100644
+--- /dev/null	
++++ b/lib/Pages/ListadeSitios.dart	
+@@ -0,0 +1,135 @@
++import 'package:flutter/material.dart';
++import 'package:proyectopersonal/Pages/Login_Page.dart';
++import 'package:proyectopersonal/Sitios%20Turisticos/Poi_Page3.dart';
++import 'package:proyectopersonal/Sitios%20Turisticos/Poi_Page4.dart';
++import '../Sitios Turisticos/Poi_Page2.dart';
++import '../main.dart';
++import '../Sitios Turisticos/Poi_Page.dart';
++
++
++class Listas_de_Sitios extends StatefulWidget {
++  const Listas_de_Sitios({Key? key}) : super(key: key);
++
++  @override
++  State<Listas_de_Sitios> createState() => _Listas_de_SitiosState();
++}
++
++class _Listas_de_SitiosState extends State<Listas_de_Sitios> {
++  @override
++  Widget build(BuildContext context) {
++    return MaterialApp(
++      home: Scaffold(
++        body: ListView(
++          children: [
++            Container(
++              child: Text("Listado de Sitios Turisticos",
++                style: TextStyle(
++                  fontFamily: "titulos",
++                  fontSize: 30,
++                ),
++                textAlign: TextAlign.center,
++              ),
++            ),
++            SizedBox(
++              height: 16.0,
++            ),
++            ElevatedButton(
++              child: Container(
++                color: Colors.white,
++                child:ListTile(
++                  title: Text("Parque Ecologico EL SALADO"),
++                  subtitle: Text("Envigado, Antioquia"),
++                  leading: Image(
++                    image: AssetImage("Assets/Imagenes/parque.png"),
++                  ),
++                ),
++              ),
++                onPressed: (){
++                  Navigator.push(context, MaterialPageRoute(builder: (context) => Poi1())
++                  );
++                }
++            ),
++            SizedBox(
++              height: 16.0,
++            ),
++            ElevatedButton(
++                child: Container(
++                  color: Colors.white,
++                  child:ListTile(
++                    title: Text("Centro Turistico Tutunendo"),
++                    subtitle: Text("Quibdó, Chocó"),
++                    leading: Image(
++                      image: AssetImage("Assets/Imagenes/rio.png"),
++                    ),
++                  ),
++                ),
++                onPressed: (){
++                  Navigator.push(context, MaterialPageRoute(builder: (context) => Poi2())
++                  );
++                }
++            ),
++            SizedBox(
++              height: 16.0,
++            ),
++            ElevatedButton(
++                child: Container(
++                  color: Colors.white,
++                  child:ListTile(
++                    title: Text("Puerto Triunfo"),
++                    subtitle: Text("Magdalena Medio, Antioquia."),
++                    leading: Image(
++                      image: AssetImage("Assets/Imagenes/aldea.png"),
++                    ),
++                  ),
++                ),
++                onPressed: (){
++                  Navigator.push(context, MaterialPageRoute(builder: (context) => Poi3())
++                  );
++                }
++            ),
++            SizedBox(
++              height: 16.0,
++            ),
++            ElevatedButton(
++                child: Container(
++                  color: Colors.white,
++                  child:ListTile(
++                    title: Text("El peñón"),
++                    subtitle: Text("Guatapé, Antioquia"),
++                    leading: Image(
++                      image: AssetImage("Assets/Imagenes/aldea.png"),
++                    ),
++                  ),
++                ),
++                onPressed: (){
++                  Navigator.push(context, MaterialPageRoute(builder: (context) => Poi4())
++                  );
++                }
++            ),
++            SizedBox(
++              height: 16.0,
++            ),
++            Container(
++              child: ElevatedButton(
++                  style: TextButton.styleFrom(
++                    backgroundColor: Colors.blue,
++                  ),
++                  child: Text("Volver",
++                    style:TextStyle(
++                        fontSize: 22,
++                        color: Colors.white,
++                        fontFamily: "contenidos"
++                    ),
++                  ),
++                  onPressed: (){
++                    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage())
++                    );
++                  }
++              ),
++            )
++          ],
++        ),
++      ),
++    );
++  }
++}
+\ No newline at end of file
+Index: lib/Sitios Turisticos/Poi_Page4.dart
+===================================================================
+diff --git a/lib/Sitios Turisticos/Poi_Page4.dart b/lib/Sitios Turisticos/Poi_Page4.dart
+new file mode 100644
+--- /dev/null	
++++ b/lib/Sitios Turisticos/Poi_Page4.dart	
+@@ -0,0 +1,74 @@
++import 'package:flutter/material.dart';
++import 'package:proyectopersonal/Pages/ListadeSitios.dart';
++
++class Poi4 extends StatelessWidget {
++  const Poi4({Key? key}) : super(key: key);
++
++  @override
++  Widget build(BuildContext context) {
++    return MaterialApp(
++      home: Scaffold(
++        body: Column(
++          children: [
++            Container(
++              width: 300,
++              height: 80,
++              margin: EdgeInsets.only(top: 70),
++              child: Text("El Peñón",
++                style: TextStyle(
++                  fontSize: 30,
++                  fontFamily: "Titulos",
++                  // color: Colors.black
++                ),
++                textAlign: TextAlign.center,
++              ),
++            ),
++            Container(
++              width: 300,
++              height: 200,
++              decoration: BoxDecoration(
++                image: DecorationImage(
++                    image: AssetImage("Assets/Imagenes/ElPeñon.png")
++                ),
++              ),
++            ),
++
++            Container(
++              width: 350,
++              height: 350,
++              margin: EdgeInsets.only(left: 15,top: 10),
++              child: Text("Ciudad: Guatapé\n"
++                  "Departamento: Antioquia\n"
++                  "Temperatura: 19°\n"
++                  "\n"
++                  "Descripcion: El peñón de Guatapé, o piedra del Peñol, es un monolito de 220 metros de altura, localizado en el término municipal de Guatapé, Antioquia, Colombia."
++                  "La Piedra Peñol, es una masa granítica de tamaño descomunal, compuesta por cuarzo, feldespato y mica que parece estratégicamente caída del cielo, ahí puesta sin más.",
++                  style: TextStyle(
++                  fontSize: 19,
++                ),
++              ),
++            ),
++            Container(
++              child: ElevatedButton(
++                  style: TextButton.styleFrom(
++                    backgroundColor: Colors.blue,
++                  ),
++                  child: Text("Volver",
++                    style:TextStyle(
++                        fontSize: 22,
++                        color: Colors.white,
++                        fontFamily: "contenidos"
++                    ),
++                  ),
++                  onPressed: (){
++                    Navigator.push(context, MaterialPageRoute(builder: (context) => Listas_de_Sitios())
++                    );
++                  }
++              ),
++            )
++          ],
++        ),
++      ),
++    );
++  }
++}
+\ No newline at end of file
+Index: lib/Sitios Turisticos/Poi_Page5.dart
+===================================================================
+diff --git a/lib/Sitios Turisticos/Poi_Page5.dart b/lib/Sitios Turisticos/Poi_Page5.dart
+new file mode 100644
+--- /dev/null	
++++ b/lib/Sitios Turisticos/Poi_Page5.dart	
+@@ -0,0 +1,73 @@
++import 'package:flutter/material.dart';
++import 'package:proyectopersonal/Pages/ListadeSitios.dart';
++
++class Poi5 extends StatelessWidget {
++  const Poi5({Key? key}) : super(key: key);
++
++  @override
++  Widget build(BuildContext context) {
++    return MaterialApp(
++      home: Scaffold(
++        body: Column(
++          children: [
++            Container(
++              width: 300,
++              height: 80,
++              margin: EdgeInsets.only(top: 70),
++              child: Text("Tutunendo",
++                style: TextStyle(
++                  fontSize: 30,
++                  fontFamily: "Titulos",
++                  // color: Colors.black
++                ),
++                textAlign: TextAlign.center,
++              ),
++            ),
++            Container(
++              width: 300,
++              height: 200,
++              decoration: BoxDecoration(
++                image: DecorationImage(
++                    image: AssetImage("Assets/Imagenes/tutunendo.png")
++                ),
++              ),
++            ),
++
++            Container(
++              width: 350,
++              height: 300,
++              margin: EdgeInsets.only(left: 15,top: 10),
++              child: Text("Ciudad: Quibdó\n"
++                  "Departamento: Chocó\n"
++                  "Temperatura: 25°\n"
++                  "\n"
++                  "Descripcion: Tutunendo es un corregimiento colombiano del municipio de Quibdó, ubicado en el departamento del Chocó. Se encuentra a 14 km de Quibdó, por la vía Quibdó-Medellín. Declarado sitio de mayor pluviosidad y Biodiverso, con una población aproximada de 3.500 habitantes.",
++                style: TextStyle(
++                  fontSize: 19,
++                ),
++              ),
++            ),
++            Container(
++              child: ElevatedButton(
++                  style: TextButton.styleFrom(
++                    backgroundColor: Colors.blue,
++                  ),
++                  child: Text("Volver",
++                    style:TextStyle(
++                        fontSize: 22,
++                        color: Colors.white,
++                        fontFamily: "contenidos"
++                    ),
++                  ),
++                  onPressed: (){
++                    Navigator.push(context, MaterialPageRoute(builder: (context) => Listas_de_Sitios())
++                    );
++                  }
++              ),
++            )
++          ],
++        ),
++      ),
++    );
++  }
++}
+\ No newline at end of file
+Index: lib/Sitios Turisticos/Poi_Page6.dart
+===================================================================
+diff --git a/lib/Sitios Turisticos/Poi_Page6.dart b/lib/Sitios Turisticos/Poi_Page6.dart
+new file mode 100644
+--- /dev/null	
++++ b/lib/Sitios Turisticos/Poi_Page6.dart	
+@@ -0,0 +1,73 @@
++import 'package:flutter/material.dart';
++import 'package:proyectopersonal/Pages/ListadeSitios.dart';
++
++class Poi6 extends StatelessWidget {
++  const Poi6({Key? key}) : super(key: key);
++
++  @override
++  Widget build(BuildContext context) {
++    return MaterialApp(
++      home: Scaffold(
++        body: Column(
++          children: [
++            Container(
++              width: 300,
++              height: 80,
++              margin: EdgeInsets.only(top: 70),
++              child: Text("Tutunendo",
++                style: TextStyle(
++                  fontSize: 30,
++                  fontFamily: "Titulos",
++                  // color: Colors.black
++                ),
++                textAlign: TextAlign.center,
++              ),
++            ),
++            Container(
++              width: 300,
++              height: 200,
++              decoration: BoxDecoration(
++                image: DecorationImage(
++                    image: AssetImage("Assets/Imagenes/tutunendo.png")
++                ),
++              ),
++            ),
++
++            Container(
++              width: 350,
++              height: 300,
++              margin: EdgeInsets.only(left: 15,top: 10),
++              child: Text("Ciudad: Quibdó\n"
++                  "Departamento: Chocó\n"
++                  "Temperatura: 25°\n"
++                  "\n"
++                  "Descripcion: Tutunendo es un corregimiento colombiano del municipio de Quibdó, ubicado en el departamento del Chocó. Se encuentra a 14 km de Quibdó, por la vía Quibdó-Medellín. Declarado sitio de mayor pluviosidad y Biodiverso, con una población aproximada de 3.500 habitantes.",
++                style: TextStyle(
++                  fontSize: 19,
++                ),
++              ),
++            ),
++            Container(
++              child: ElevatedButton(
++                  style: TextButton.styleFrom(
++                    backgroundColor: Colors.blue,
++                  ),
++                  child: Text("Volver",
++                    style:TextStyle(
++                        fontSize: 22,
++                        color: Colors.white,
++                        fontFamily: "contenidos"
++                    ),
++                  ),
++                  onPressed: (){
++                    Navigator.push(context, MaterialPageRoute(builder: (context) => Listas_de_Sitios())
++                    );
++                  }
++              ),
++            )
++          ],
++        ),
++      ),
++    );
++  }
++}
+\ No newline at end of file
+Index: lib/Repository/firebase_api.dart
+===================================================================
+diff --git a/lib/Repository/firebase_api.dart b/lib/Repository/firebase_api.dart
+new file mode 100644
+--- /dev/null	
++++ b/lib/Repository/firebase_api.dart	
+@@ -0,0 +1,43 @@
++import 'package:cloud_firestore/cloud_firestore.dart';
++import 'package:firebase_auth/firebase_auth.dart';
++import 'package:proyectopersonal/Modelos/Users.dart' as UserApp;
++
++class FirebaseApi{
++
++  Future<Object?> registerUser(String email, password) async{
++    try{
++      final credential = await FirebaseAuth.instance
++          .createUserWithEmailAndPassword(email: email, password: password);
++      return credential.user?.uid;
++    } on FirebaseAuthException catch (e) {
++      print("FirebaseAuthException ${e.code}");
++      return e.code;
++    } on FirebaseAuthException catch (e){
++      print("FirebaseAuthException ${e.code}");
++      return e.code;
++    }
++  }
++
++  Future<String?> loginUser(String email, password) async{
++    try{
++      final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password);
++      return credential.user?.uid;
++    } on FirebaseAuthException catch (e) {
++      print("FirebaseAuthException ${e.code}");
++      return e.code;
++    } on FirebaseAuthException catch (e) {
++      print("FirebaseAuthException ${e.code}");
++      return e.code;
++    }
++  }
++
++  Future <String> createUser(UserApp.User user) async{
++    try{
++      final document = await FirebaseFirestore.instance.collection("users").doc(user.uid).set(user.toJson());
++      return user.uid;
++    } on FirebaseException catch (e){
++      print("FirebaseException ${e.code}");
++      return e.code;
++    }
++  }
++}
+\ No newline at end of file
+Index: lib/firebase_options.dart
+===================================================================
+diff --git a/lib/firebase_options.dart b/lib/firebase_options.dart
+new file mode 100644
+--- /dev/null	
++++ b/lib/firebase_options.dart	
+@@ -0,0 +1,76 @@
++// File generated by FlutterFire CLI.
++// ignore_for_file: lines_longer_than_80_chars, avoid_classes_with_only_static_members
++import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
++import 'package:flutter/foundation.dart'
++    show defaultTargetPlatform, kIsWeb, TargetPlatform;
++
++/// Default [FirebaseOptions] for use with your Firebase apps.
++///
++/// Example:
++/// ```dart
++/// import 'firebase_options.dart';
++/// // ...
++/// await Firebase.initializeApp(
++///   options: DefaultFirebaseOptions.currentPlatform,
++/// );
++/// ```
++class DefaultFirebaseOptions {
++  static FirebaseOptions get currentPlatform {
++    if (kIsWeb) {
++      return web;
++    }
++    switch (defaultTargetPlatform) {
++      case TargetPlatform.android:
++        return android;
++      case TargetPlatform.iOS:
++        return ios;
++      case TargetPlatform.macOS:
++        throw UnsupportedError(
++          'DefaultFirebaseOptions have not been configured for macos - '
++          'you can reconfigure this by running the FlutterFire CLI again.',
++        );
++      case TargetPlatform.windows:
++        throw UnsupportedError(
++          'DefaultFirebaseOptions have not been configured for windows - '
++          'you can reconfigure this by running the FlutterFire CLI again.',
++        );
++      case TargetPlatform.linux:
++        throw UnsupportedError(
++          'DefaultFirebaseOptions have not been configured for linux - '
++          'you can reconfigure this by running the FlutterFire CLI again.',
++        );
++      default:
++        throw UnsupportedError(
++          'DefaultFirebaseOptions are not supported for this platform.',
++        );
++    }
++  }
++
++  static const FirebaseOptions web = FirebaseOptions(
++    apiKey: 'AIzaSyACRIsKIuDJRGBzX79UNYPORwfwHf-Umvo',
++    appId: '1:316603944477:web:4cc3e50e4b676d534a00f4',
++    messagingSenderId: '316603944477',
++    projectId: 'geminis-aec9d',
++    authDomain: 'geminis-aec9d.firebaseapp.com',
++    storageBucket: 'geminis-aec9d.appspot.com',
++    measurementId: 'G-YR19PL903B',
++  );
++
++  static const FirebaseOptions android = FirebaseOptions(
++    apiKey: 'AIzaSyBB0L4MwpN6bLjEL_yPYy9o2Oxs7Z7vkp8',
++    appId: '1:316603944477:android:50e12e31973044c64a00f4',
++    messagingSenderId: '316603944477',
++    projectId: 'geminis-aec9d',
++    storageBucket: 'geminis-aec9d.appspot.com',
++  );
++
++  static const FirebaseOptions ios = FirebaseOptions(
++    apiKey: 'AIzaSyDaLV9Icko19cMnu814Cfe8Vrzpbejpsyo',
++    appId: '1:316603944477:ios:24d2c1e2ee3cb1e54a00f4',
++    messagingSenderId: '316603944477',
++    projectId: 'geminis-aec9d',
++    storageBucket: 'geminis-aec9d.appspot.com',
++    iosClientId: '316603944477-g0ld0qpr8sfrui7i054v8mj4oiale0u9.apps.googleusercontent.com',
++    iosBundleId: 'com.example.proyectopersonal',
++  );
++}
