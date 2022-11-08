@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\uniremington\\StudioProjects\\Geminis2.1\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "C:\\Users\\uniremington\\StudioProjects\\Geminis\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\uniremington\\.gradle\\caches\\transforms-3\\6b0daa5fb4c2eb7e8b55778df9b972f6\\transformed\\jetified-play-services-basement-18.1.0\\res\\values\\values.xml",
@@ -76,25 +76,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\uniremington\\StudioProjects\\Geminis2.1\\android\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "176,832",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "483,998"
-                    },
-                    "to": {
-                        "startLines": "130,135",
-                        "startColumns": "4,4",
-                        "startOffsets": "9259,9567",
-                        "endLines": "134,137",
-                        "endColumns": "12,12",
-                        "endOffsets": "9562,9731"
-                    }
-                },
-                {
                     "source": "C:\\Users\\uniremington\\.gradle\\caches\\transforms-3\\49bc944d29f70d45aa5add8e43e3247e\\transformed\\jetified-window-1.0.0-beta04\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,7,8,9,10,11,19,23,34,51",
@@ -111,6 +92,25 @@
                         "endLines": "7,8,9,10,86,158,162,343,360,368",
                         "endColumns": "11,59,51,44,59,24,24,24,24,24",
                         "endOffsets": "339,399,451,496,5500,11046,11243,20936,22050,22443"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\uniremington\\StudioProjects\\Geminis\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "176,832",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "483,998"
+                    },
+                    "to": {
+                        "startLines": "130,135",
+                        "startColumns": "4,4",
+                        "startOffsets": "9259,9567",
+                        "endLines": "134,137",
+                        "endColumns": "12,12",
+                        "endOffsets": "9562,9731"
                     }
                 }
             ]

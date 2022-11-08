@@ -20,7 +20,7 @@ class Sitio {
     "departamento" : _departamento,
     "ciudad" : _ciudad,
     "Temperatura" : _temperatura,
-    "descripcion" : -_descripcion,
+    "descripcion" : _descripcion,
     "rating" : _rating,
     "Lugar turistico" : _lugarturistico
   };
