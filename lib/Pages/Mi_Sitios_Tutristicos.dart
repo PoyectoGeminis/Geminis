@@ -41,20 +41,21 @@ class _MiSitiosTuristicoState extends State<MiSitiosTuristico> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
         child: StreamBuilder<QuerySnapshot>(
-          stream: FirebaseFirestore.instance.collection("users").
-          doc(FirebaseAuth.instance.currentUser?.uid).
-          collection("sitios").
-          snapshots(),
-          builder: (context, snapshots){
-            if(!snapshots.hasData) return const Text("Loading");
+          stream: FirebaseFirestore.instance
+              .collection("users")
+              .doc(FirebaseAuth.instance.currentUser?.uid)
+              .collection("sitios")
+              .snapshots(),
+          builder: (context, snapshot){
+            if(!snapshot.hasData) return const Text("Loading");
             return ListView.builder(
-              itemCount: snapshots.data?.docs.length,
+              itemCount: snapshot.data?.docs.length,
               itemBuilder: (context, index){
-                QueryDocumentSnapshot sitio = snapshots.data!.docs[index];
+                QueryDocumentSnapshot sitio = snapshot.data!.docs[index];
                 return Card(
                   child: ListTile(
                     title: Text(sitio["nombre"]),
-                    subtitle: Text(sitio["${"ciudad"}, ${"departamento"}"]),
+                    subtitle: Text(sitio["ciudad"] +", "+ sitio["departamento"]),
                   ),
                 );
               },
