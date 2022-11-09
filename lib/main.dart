@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:proyectopersonal/Pages/Detalle_Poi_Page.dart';
 import 'package:proyectopersonal/Pages/Login_Page.dart';
 import 'package:proyectopersonal/Pages/MiLista.dart';
 import 'package:proyectopersonal/Pages/Register_Page.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
         ),
         child: Scaffold(
           backgroundColor: Colors.transparent,
-          body: const SplashPage(),
+          body: const MiSitiosTuristico(),
         ),
       ),
     );

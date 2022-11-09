@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:proyectopersonal/Pages/Detalle_Poi_Page.dart';
 import 'package:proyectopersonal/Pages/Login_Page.dart';
 import 'package:proyectopersonal/Pages/MiLista.dart';
 
@@ -56,6 +57,11 @@ class _MiSitiosTuristicoState extends State<MiSitiosTuristico> {
                   child: ListTile(
                     title: Text(sitio["nombre"]),
                     subtitle: Text(sitio["ciudad"] +", "+ sitio["departamento"]),
+                  onTap: (){
+                        Navigator.push(context, MaterialPageRoute(
+                            builder: (context) => DetaillPoiPage())
+                        );
+                      }
                   ),
                 );
               },

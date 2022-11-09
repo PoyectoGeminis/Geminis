@@ -43,11 +43,7 @@ class _ListadeSitiosState extends State<ListadeSitios> {
   }
 
   void _saveList(){
-    var lugares = " ";
-    if (_rio) lugares = "$lugares Rio";
-    if (_laguna) lugares = "$lugares Laguna";
-    if (_parqueEcologico) lugares = "$lugares Parque Ecológico";
-    var sitio = Sitio("",_name.text,_departamento.text, _ciudad.text, _temperatura.text, _descripcion.text, _rating, lugares);
+    var sitio = Sitio("",_name.text,_departamento.text, _ciudad.text, _temperatura.text, _descripcion.text, _rating);
     _createSitio(sitio);
   }
 
@@ -141,50 +137,6 @@ class _ListadeSitiosState extends State<ListadeSitios> {
               ),
               const SizedBox(
                 height: 16.0,
-              ),
-              Row(
-                  children: [
-                    Expanded(
-                        child: CheckboxListTile(
-                          title: const Text("Rio"),
-                          value: _rio,
-                          selected: _rio,
-                          onChanged: (bool? value) {
-                            setState(() {
-                              _rio = value!;
-                            });
-                          },
-                        ),
-                    ),
-                    Expanded(
-                      child: CheckboxListTile(
-                        title: const Text("Laguna"),
-                        value: _laguna,
-                        selected: _laguna,
-                        onChanged: (bool? value) {
-                          setState(() {
-                            _laguna = value!;
-                          });
-                        },
-                      ),
-                    ),
-                  ],
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: CheckboxListTile(
-                      title: const Text("Parque Ecológico"),
-                      value: _parqueEcologico,
-                      selected: _parqueEcologico,
-                      onChanged: (bool? value) {
-                        setState(() {
-                          _parqueEcologico = value!;
-                        });
-                      },
-                    ),
-                  ),
-                ],
               ),
               ElevatedButton(
                 onPressed: (){

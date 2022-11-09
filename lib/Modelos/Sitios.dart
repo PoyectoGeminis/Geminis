@@ -6,12 +6,10 @@ class Sitio {
   var _temperatura;
   var _descripcion;
   var _rating;
-  var _lugarturistico;
 
 
   Sitio(this._id, this._name,this._departamento, this._ciudad, this._temperatura,
-      this._descripcion, this._rating, this._lugarturistico);
-
+      this._descripcion, this._rating);
 
 
   Map<String, dynamic> toJson() => {
@@ -21,9 +19,10 @@ class Sitio {
     "ciudad" : _ciudad,
     "Temperatura" : _temperatura,
     "descripcion" : _descripcion,
-    "rating" : _rating,
-    "Lugar turistico" : _lugarturistico
+    "rating" : _rating
   };
+
+
 
   Sitio.fromJson(Map<String, dynamic> json)
       : _id = json["id"],
@@ -32,8 +31,7 @@ class Sitio {
         _ciudad = json["ciudad"],
         _temperatura = json["temperatura"],
         _descripcion = json["descripcion"],
-        _rating = json["rating"],
-        _lugarturistico = json["Lugar turistico"];
+        _rating = json["rating"];
 
   get id => _id;
 
@@ -45,12 +43,6 @@ class Sitio {
 
   set name(value) {
     _name = value;
-  }
-
-  get lugarturistico => _lugarturistico;
-
-  set lugarturistico(value) {
-    _lugarturistico = value;
   }
 
   get rating => _rating;
