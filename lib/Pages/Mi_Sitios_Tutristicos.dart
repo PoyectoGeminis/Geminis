@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:proyectopersonal/Pages/Detalle_Poi_Page.dart';
 import 'package:proyectopersonal/Pages/Login_Page.dart';
 import 'package:proyectopersonal/Pages/MiLista.dart';
 
@@ -42,9 +43,7 @@ class _MiSitiosTuristicoState extends State<MiSitiosTuristico> {
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
         child: StreamBuilder<QuerySnapshot>(
           stream: FirebaseFirestore.instance
-              .collection("users")
-              .doc(FirebaseAuth.instance.currentUser?.uid)
-              .collection("sitios")
+              .collection("Sitios_Turisticos")
               .snapshots(),
           builder: (context, snapshot){
             if(!snapshot.hasData) return const Text("Loading");
@@ -56,6 +55,11 @@ class _MiSitiosTuristicoState extends State<MiSitiosTuristico> {
                   child: ListTile(
                     title: Text(sitio["nombre"]),
                     subtitle: Text(sitio["ciudad"] +", "+ sitio["departamento"]),
+                  onTap: (){
+                        Navigator.push(context, MaterialPageRoute(
+                            builder: (context) => DetaillPoiPage(sitio))
+                        );
+                      }
                   ),
                 );
               },

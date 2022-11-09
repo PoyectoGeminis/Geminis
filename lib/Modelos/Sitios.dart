@@ -1,39 +1,40 @@
 class Sitio {
   var _id;
   var _name;
-  var _departamento;
+  var _photo;
   var _ciudad;
-  var _temperatura;
+  var _departamento;
   var _descripcion;
+  var _temperatura;
   var _rating;
-  var _lugarturistico;
 
 
-  Sitio(this._id, this._name,this._departamento, this._ciudad, this._temperatura,
-      this._descripcion, this._rating, this._lugarturistico);
-
+  Sitio(this._id, this._name,this._photo,this._ciudad, this._departamento, this._descripcion,
+      this._temperatura, this._rating);
 
 
   Map<String, dynamic> toJson() => {
     "id" : _id,
     "nombre" : _name,
-    "departamento" : _departamento,
+    "photo" : _photo,
     "ciudad" : _ciudad,
-    "Temperatura" : _temperatura,
+    "departamento" : _departamento,
     "descripcion" : _descripcion,
-    "rating" : _rating,
-    "Lugar turistico" : _lugarturistico
+    "Temperatura" : _temperatura,
+    "rating" : _rating
   };
+
+
 
   Sitio.fromJson(Map<String, dynamic> json)
       : _id = json["id"],
         _name = json["nombre"],
-        _departamento = json["departamento"],
+        _photo = json["photo"],
         _ciudad = json["ciudad"],
-        _temperatura = json["temperatura"],
+        _departamento = json["departamento"],
         _descripcion = json["descripcion"],
-        _rating = json["rating"],
-        _lugarturistico = json["Lugar turistico"];
+        _temperatura = json["temperatura"],
+        _rating = json["rating"];
 
   get id => _id;
 
@@ -45,12 +46,6 @@ class Sitio {
 
   set name(value) {
     _name = value;
-  }
-
-  get lugarturistico => _lugarturistico;
-
-  set lugarturistico(value) {
-    _lugarturistico = value;
   }
 
   get rating => _rating;
@@ -71,10 +66,11 @@ class Sitio {
     _temperatura = value;
   }
 
-  get ciudad => _ciudad;
 
-  set ciudad(value) {
-    _ciudad = value;
+  get photo => _photo;
+
+  set photo(value) {
+    _photo = value;
   }
 
   get departamento => _departamento;
@@ -82,4 +78,11 @@ class Sitio {
   set departamento(value) {
     _departamento = value;
   }
+
+  get ciudad => _ciudad;
+
+  set ciudad(value) {
+    _ciudad = value;
+  }
+
 }

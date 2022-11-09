@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:proyectopersonal/Pages/Login_Page.dart';
-import 'package:proyectopersonal/Pages/MiLista.dart';
-import 'package:proyectopersonal/Pages/Register_Page.dart';
 import 'Pages/Mi_Sitios_Tutristicos.dart';
 import 'Pages/Splach_Page.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -30,7 +27,7 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: const[
         Locale("es", "CO"),
-        Locale("en", "US"),
+        Locale("en", "US")
       ],
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -43,11 +40,16 @@ class MyApp extends StatelessWidget {
         ),
         child: Scaffold(
           backgroundColor: Colors.transparent,
-          body: const SplashPage(),
+          body: const MiSitiosTuristico(),
         ),
       ),
     );
   }
 }
+/*https://pbs.twimg.com/media/E4k4_O_XwAYCPNK.jpg
 
-
+Puerto Triunfo cuenta con excelentes paisajes y paisajes paradisiacos que le
+dieron el reconocimiento de Eje de Desarrollo Turístico de Antioquia.
+Se destaca en el Corazón de Colombia como la ciudad con mejor infraestructura hotelera,
+    resaltando la amabilidad de su gente.
+ */

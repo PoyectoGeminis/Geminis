@@ -45,15 +45,11 @@ class FirebaseApi{
   Future<String> createSitio(Sitio sitio) async{
     try{
       final uid = FirebaseAuth.instance.currentUser?.uid;
-      final document = FirebaseFirestore.instance.collection("users").
-      doc(uid).
-      collection("sitios").
+      final document = FirebaseFirestore.instance.collection("Sitios_Turisticos").
       doc();
       sitio.id = document.id;
 
-      final result = FirebaseFirestore.instance.collection("users").
-      doc(uid).
-      collection("sitios").
+      final result = FirebaseFirestore.instance.collection("Sitios_Turisticos").
       doc(sitio.id).
       set(sitio.toJson());
       return sitio.id;
