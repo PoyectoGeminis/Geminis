@@ -14,16 +14,16 @@ class ListadeSitios extends StatefulWidget {
 class _ListadeSitiosState extends State<ListadeSitios> {
 
   final _name =TextEditingController();
-  final _departamento = TextEditingController();
+  final _photo = TextEditingController();
   final _ciudad = TextEditingController();
-  final _temperatura = TextEditingController();
+  final _departamento = TextEditingController();
   final _descripcion = TextEditingController();
+  final _temperatura = TextEditingController();
 
   final FirebaseApi _firebaseApi = FirebaseApi();
 
   double _rating = 3.0;
 
-  bool _rio = false, _laguna = false, _parqueEcologico = false;
 
   void _showMsg(String msg){
     final scaffold = ScaffoldMessenger.of(context);
@@ -43,7 +43,7 @@ class _ListadeSitiosState extends State<ListadeSitios> {
   }
 
   void _saveList(){
-    var sitio = Sitio("",_name.text,_departamento.text, _ciudad.text, _temperatura.text, _descripcion.text, _rating);
+    var sitio = Sitio("", _name.text, _photo.text, _ciudad.text, _departamento.text, _descripcion.text, _temperatura.text, _rating);
     _createSitio(sitio);
   }
 
@@ -71,10 +71,10 @@ class _ListadeSitiosState extends State<ListadeSitios> {
                 height: 16.0,
               ),
               TextFormField(
-                controller: _departamento,
+                controller: _photo,
                 decoration:  const InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: "Departamento"
+                    border: OutlineInputBorder(),
+                    labelText: "Link de la Imagen"
                 ),
                 keyboardType:  TextInputType.text,
               ),
@@ -86,6 +86,17 @@ class _ListadeSitiosState extends State<ListadeSitios> {
                 decoration:  const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Ciudad"
+                ),
+                keyboardType:  TextInputType.text,
+              ),
+              const SizedBox(
+                height: 16.0,
+              ),
+              TextFormField(
+                controller: _departamento,
+                decoration:  const InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: "Departamento"
                 ),
                 keyboardType:  TextInputType.text,
               ),
@@ -115,25 +126,19 @@ class _ListadeSitiosState extends State<ListadeSitios> {
                 height: 16.0,
               ),
               RatingBar.builder(
-                  initialRating: 3,
-                  minRating: 1,
-                  direction: Axis.horizontal,
-                  allowHalfRating: true,
-                  itemCount: 5,
-                  itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
-                  itemBuilder: (context, _) =>  const Icon(
-                    Icons.star,
-                    color:  Colors.amber,
-                  ),
-                  onRatingUpdate: (rating){
-                    _rating = rating;
-                  },
-              ),
-              const SizedBox(
-                height: 16.0,
-              ),
-              const Text("Lugar Turistico",
-              style: TextStyle(fontSize: 20),
+                initialRating: 3,
+                minRating: 1,
+                direction: Axis.horizontal,
+                allowHalfRating: true,
+                itemCount: 5,
+                itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                itemBuilder: (context, _) =>  const Icon(
+                  Icons.star,
+                  color:  Colors.amber,
+                ),
+                onRatingUpdate: (rating){
+                  _rating = rating;
+                },
               ),
               const SizedBox(
                 height: 16.0,

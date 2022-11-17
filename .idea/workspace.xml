@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="911138c7-e507-49a0-804f-b473915833b8" name="Changes" comment="Correciones en el Detalle Poi" />
+    <list default="true" id="c96eb519-7ae9-458a-bdc4-3e84441c9b55" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Geminis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Geminis.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Modelos/Sitios.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Modelos/Sitios.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Pages/Detalle_Poi_Page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/Detalle_Poi_Page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Pages/MiLista.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/MiLista.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Pages/Mi_Sitios_Tutristicos.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Pages/Mi_Sitios_Tutristicos.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +36,7 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/Pages" />
-    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">

@@ -29,45 +29,43 @@ class _MiSitiosTuristicoState extends State<MiSitiosTuristico> {
                   Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginPage()));
                 }
               });
-              },
-              itemBuilder: (BuildContext context) => <PopupMenuEntry<Menu>>[
-                const PopupMenuItem(
-                    value: Menu.logOut,
+            },
+            itemBuilder: (BuildContext context) => <PopupMenuEntry<Menu>>[
+              const PopupMenuItem(
+                  value: Menu.logOut,
                   child: Text("Cerrar Sesión")
-                ),
-              ],
+              ),
+            ],
           ),
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-        child: StreamBuilder<QuerySnapshot>(
-          stream: FirebaseFirestore.instance
-              .collection("users")
-              .doc(FirebaseAuth.instance.currentUser?.uid)
-              .collection("sitios")
-              .snapshots(),
-          builder: (context, snapshot){
-            if(!snapshot.hasData) return const Text("Loading");
-            return ListView.builder(
-              itemCount: snapshot.data?.docs.length,
-              itemBuilder: (context, index){
-                QueryDocumentSnapshot sitio = snapshot.data!.docs[index];
-                return Card(
-                  child: ListTile(
-                    title: Text(sitio["nombre"]),
-                    subtitle: Text(sitio["ciudad"] +", "+ sitio["departamento"]),
-                  onTap: (){
-                        Navigator.push(context, MaterialPageRoute(
-                            builder: (context) => DetaillPoiPage())
-                        );
-                      }
-                  ),
-                );
-              },
-            );
-          },
-        )
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: StreamBuilder<QuerySnapshot>(
+            stream: FirebaseFirestore.instance
+                .collection("Sitios_Turisticos")
+                .snapshots(),
+            builder: (context, snapshot){
+              if(!snapshot.hasData) return const Text("Loading");
+              return ListView.builder(
+                itemCount: snapshot.data?.docs.length,
+                itemBuilder: (context, index){
+                  QueryDocumentSnapshot sitio = snapshot.data!.docs[index];
+                  return Card(
+                    child: ListTile(
+                        title: Text(sitio["nombre"]),
+                        subtitle: Text(sitio["ciudad"] +", "+ sitio["departamento"]),
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (context) => DetaillPoiPage(sitio))
+                          );
+                        }
+                    ),
+                  );
+                },
+              );
+            },
+          )
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: (){
