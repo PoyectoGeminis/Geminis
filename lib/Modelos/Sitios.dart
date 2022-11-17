@@ -1,26 +1,24 @@
 class Sitio {
   var _id;
   var _name;
-  var _photo;
-  var _ciudad;
   var _departamento;
-  var _descripcion;
+  var _ciudad;
   var _temperatura;
+  var _descripcion;
   var _rating;
 
 
-  Sitio(this._id, this._name,this._photo,this._ciudad, this._departamento, this._descripcion,
-      this._temperatura, this._rating);
+  Sitio(this._id, this._name,this._departamento, this._ciudad, this._temperatura,
+      this._descripcion, this._rating);
 
 
   Map<String, dynamic> toJson() => {
     "id" : _id,
     "nombre" : _name,
-    "photo" : _photo,
-    "ciudad" : _ciudad,
     "departamento" : _departamento,
-    "descripcion" : _descripcion,
+    "ciudad" : _ciudad,
     "Temperatura" : _temperatura,
+    "descripcion" : _descripcion,
     "rating" : _rating
   };
 
@@ -29,11 +27,10 @@ class Sitio {
   Sitio.fromJson(Map<String, dynamic> json)
       : _id = json["id"],
         _name = json["nombre"],
-        _photo = json["photo"],
-        _ciudad = json["ciudad"],
         _departamento = json["departamento"],
-        _descripcion = json["descripcion"],
+        _ciudad = json["ciudad"],
         _temperatura = json["temperatura"],
+        _descripcion = json["descripcion"],
         _rating = json["rating"];
 
   get id => _id;
@@ -66,11 +63,10 @@ class Sitio {
     _temperatura = value;
   }
 
+  get ciudad => _ciudad;
 
-  get photo => _photo;
-
-  set photo(value) {
-    _photo = value;
+  set ciudad(value) {
+    _ciudad = value;
   }
 
   get departamento => _departamento;
@@ -78,11 +74,4 @@ class Sitio {
   set departamento(value) {
     _departamento = value;
   }
-
-  get ciudad => _ciudad;
-
-  set ciudad(value) {
-    _ciudad = value;
-  }
-
 }

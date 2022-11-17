@@ -14,11 +14,10 @@ class ListadeSitios extends StatefulWidget {
 class _ListadeSitiosState extends State<ListadeSitios> {
 
   final _name =TextEditingController();
-  final _photo = TextEditingController();
-  final _ciudad = TextEditingController();
   final _departamento = TextEditingController();
-  final _descripcion = TextEditingController();
+  final _ciudad = TextEditingController();
   final _temperatura = TextEditingController();
+  final _descripcion = TextEditingController();
 
   final FirebaseApi _firebaseApi = FirebaseApi();
 
@@ -44,7 +43,7 @@ class _ListadeSitiosState extends State<ListadeSitios> {
   }
 
   void _saveList(){
-    var sitio = Sitio("", _name.text, _photo.text, _ciudad.text, _departamento.text, _descripcion.text, _temperatura.text, _rating);
+    var sitio = Sitio("",_name.text,_departamento.text, _ciudad.text, _temperatura.text, _descripcion.text, _rating);
     _createSitio(sitio);
   }
 
@@ -65,17 +64,6 @@ class _ListadeSitiosState extends State<ListadeSitios> {
                 decoration:  const InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: "Nombre"
-                ),
-                keyboardType:  TextInputType.text,
-              ),
-              const SizedBox(
-                height: 16.0,
-              ),
-              TextFormField(
-                controller: _photo,
-                decoration:  const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: "Link de la Imagen"
                 ),
                 keyboardType:  TextInputType.text,
               ),
@@ -143,6 +131,9 @@ class _ListadeSitiosState extends State<ListadeSitios> {
               ),
               const SizedBox(
                 height: 16.0,
+              ),
+              const Text("Lugar Turistico",
+              style: TextStyle(fontSize: 20),
               ),
               const SizedBox(
                 height: 16.0,

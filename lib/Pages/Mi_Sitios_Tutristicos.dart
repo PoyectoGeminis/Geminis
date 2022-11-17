@@ -43,7 +43,9 @@ class _MiSitiosTuristicoState extends State<MiSitiosTuristico> {
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
         child: StreamBuilder<QuerySnapshot>(
           stream: FirebaseFirestore.instance
-              .collection("Sitios_Turisticos")
+              .collection("users")
+              .doc(FirebaseAuth.instance.currentUser?.uid)
+              .collection("sitios")
               .snapshots(),
           builder: (context, snapshot){
             if(!snapshot.hasData) return const Text("Loading");
@@ -57,7 +59,7 @@ class _MiSitiosTuristicoState extends State<MiSitiosTuristico> {
                     subtitle: Text(sitio["ciudad"] +", "+ sitio["departamento"]),
                   onTap: (){
                         Navigator.push(context, MaterialPageRoute(
-                            builder: (context) => DetaillPoiPage(sitio))
+                            builder: (context) => DetaillPoiPage())
                         );
                       }
                   ),

@@ -1,10 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:proyectopersonal/Modelos/Sitios.dart';
 
 class DetaillPoiPage extends StatefulWidget {
-  QueryDocumentSnapshot dbsitio;
-  DetaillPoiPage(this.dbsitio,{Key? key}) : super(key: key);
+  const DetaillPoiPage({Key? key}) : super(key: key);
 
   @override
   State<DetaillPoiPage> createState() => _DetaillPoiPageState();
@@ -20,42 +19,22 @@ class _DetaillPoiPageState extends State<DetaillPoiPage> {
           centerTitle: true,
           title: Text("Detalle del Sitio"),
         ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-        child: ListView(
-          children: [
-            Text(widget.dbsitio["nombre"],
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 30,
-            ),
-            ),
-            const SizedBox(
-              height: 12.0,
-            ),
-            Image.network(
-              widget.dbsitio["photo"]
-            ),
-            const SizedBox(
-              height: 16.0,
-            ),
-            Text("Ciudad: "+widget.dbsitio["ciudad"],
-                textAlign: TextAlign.justify),
-            const SizedBox(
-              height: 12.0,
-            ),
-            Text("Departamento: "+ widget.dbsitio["departamento"],
-                textAlign: TextAlign.left),
-            const SizedBox(
-              height: 12.0,
-            ),
-            Text("Descrición: "+ widget.dbsitio["descripcion"]),
-            const SizedBox(
-              height: 12.0,
-            ),
-          ],
+        body: Container(
+          child: ListView(
+            children: [
+              Image(image: AssetImage("Assets/Imagenes/Peñol.png")
+              ),
+              const SizedBox(
+                height: 16.0,
+              ),
+              Container(
+                child: Text(
+                  "El peñón de Guatapé, o piedra del Peñol, es un monolito de 220 metros de altura, localizado en el término municipal de Guatapé, Antioquia, Colombia. La piedra de El Peñol es una masa granítica, compuesta por cuarzo, feldespato y mica, fue escalada por primera vez en 16 de julio de 1954 por un habitante de la zona, Luis Eduardo Villegas López. Actualmente se puede acceder a su cumbre subiendo los 715 escalones construidos en el monolito."
+                ),
+              )
+            ],
+          ),
         ),
-      ),
-    );
+      );
   }
 }
