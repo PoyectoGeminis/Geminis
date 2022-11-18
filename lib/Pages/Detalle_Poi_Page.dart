@@ -39,25 +39,34 @@ class _DetaillPoiPageState extends State<DetaillPoiPage> {
               widget.dbsitio["photo"],
             ),
             const SizedBox(
-              height: 16.0,
+              height: 12.0,
             ),
             Text("Ciduad: "+widget.dbsitio["ciudad"],
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.justify,
               style:TextStyle(
                 fontSize: 15,
               ),
             ),
             const SizedBox(
-              height: 16.0,
+              height: 10.0,
             ),
             Text("Departamento: "+widget.dbsitio["departamento"],
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.justify,
               style:TextStyle(
                 fontSize: 15,
               ),
             ),
             const SizedBox(
-              height: 16.0,
+              height: 10.0,
+            ),
+            Text("Temperatura: "+widget.dbsitio["Temperatura"],
+              textAlign: TextAlign.justify,
+              style:TextStyle(
+                fontSize: 15,
+              ),
+            ),
+            const SizedBox(
+              height: 10.0,
             ),
             Text("Descripción: "+widget.dbsitio["descripcion"],
               textAlign: TextAlign.justify,
@@ -66,7 +75,7 @@ class _DetaillPoiPageState extends State<DetaillPoiPage> {
               ),
             ),
             const SizedBox(
-              height: 16.0,
+              height: 10.0,
             ),
           ],
         ),
