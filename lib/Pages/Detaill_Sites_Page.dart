@@ -7,19 +7,17 @@ import 'dart:async';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class DetaillSitesPage extends StatefulWidget {
-   var sites;
+   late QueryDocumentSnapshot sites;
 
    DetaillSitesPage(this.sites);
 
   @override
-  State<DetaillSitesPage> createState() => _DetaillSitesPageState(sites);
+  State<DetaillSitesPage> createState() => _DetaillSitesPageState();
 }
 
 class _DetaillSitesPageState extends State<DetaillSitesPage> {
 
-  var sites;
 
-  _DetaillSitesPageState(this.sites);
 
   final Completer<GoogleMapController> _controller = Completer();
   final Set<Marker> _markers = Set<Marker>();
@@ -43,7 +41,7 @@ class _DetaillSitesPageState extends State<DetaillSitesPage> {
           GoogleMap(
             mapType: MapType.terrain,
             initialCameraPosition: CameraPosition(
-            target: LatLng(sites["latitud"],sites["longitud"]),
+            target: LatLng(widget.sites['latitud'], widget.sites['longitud']),
             zoom: 15,
             ),
             markers: _markers,
@@ -73,9 +71,9 @@ class _DetaillSitesPageState extends State<DetaillSitesPage> {
   void _showMarker(){
     setState(() {
       _markers.add(Marker(
-        markerId: MarkerId(sites["nombre"]),
+        markerId: MarkerId(widget.sites["nombre"]),
         icon: BitmapDescriptor.defaultMarker,
-        position: LatLng(sites["latitud"], sites["longitud"]),
+        position: LatLng(widget.sites['latitud'], widget.sites['longitud']),
         //infoWindow: InfoWindow(
           //title: sites["nombre"], snippet: "Ciudad ${sites["ciudad"]}"),
           onTap: (){
@@ -94,7 +92,7 @@ class _DetaillSitesPageState extends State<DetaillSitesPage> {
                     child: Container(
                       decoration: BoxDecoration(
                         image: DecorationImage(
-                          image: NetworkImage(sites["urlPicture"]),
+                          image: NetworkImage(widget.sites["urlPicture"]),
                           fit: BoxFit.fitWidth,
                           filterQuality: FilterQuality.high),
                           borderRadius: const BorderRadius.only(
@@ -107,21 +105,21 @@ class _DetaillSitesPageState extends State<DetaillSitesPage> {
                 ),
                 Padding(
                     padding: const EdgeInsets.all(8.0),
-                  child: Text("Descripcion: ${sites["descripcion"]}",
+                  child: Text("Descripcion: ${widget.sites["descripcion"]}",
                   textAlign: TextAlign.center,
                     style: const TextStyle(fontSize: 10.0),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text("Ciudad: ${sites["ciudad"]}",
+                  child: Text("Ciudad: ${widget.sites["ciudad"]}",
                     textAlign: TextAlign.center,
                     style: const TextStyle(fontSize: 10.0),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text("Departamento: ${sites["departamento"]}",
+                  child: Text("Departamento: ${widget.sites["departamento"]}",
                     textAlign: TextAlign.center,
                     style: const TextStyle(fontSize: 10.0),
                   ),
@@ -129,7 +127,7 @@ class _DetaillSitesPageState extends State<DetaillSitesPage> {
               ],
             ),
           ),
-              LatLng(sites["latitud"], sites["longitud"]),
+              LatLng(widget.sites["latitud"], widget.sites["longitud"]),
           );
       }
       ));
