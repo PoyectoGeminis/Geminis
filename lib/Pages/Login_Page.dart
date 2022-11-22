@@ -1,12 +1,10 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:proyectopersonal/Pages/Mi_Sitios_Tutristicos.dart';
 import 'package:proyectopersonal/Pages/Register_Page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../Modelos/Users.dart';
 import 'package:proyectopersonal/Pages/Home_Page.dart';
 import '../Repository/firebase_api.dart';
-import 'package:flutter/material.dart';
 
 
 class LoginPage extends StatefulWidget {

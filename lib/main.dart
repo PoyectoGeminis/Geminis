@@ -3,12 +3,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:proyectopersonal/Modelos/Local_Sitio.dart';
-import 'package:proyectopersonal/Pages/Detalle_Poi_Page.dart';
-import 'package:proyectopersonal/Pages/Home_Page.dart';
-import 'package:proyectopersonal/Pages/Login_Page.dart';
-import 'package:proyectopersonal/Pages/MiLista.dart';
-import 'package:proyectopersonal/Pages/Register_Page.dart';
-import 'Pages/Mi_Sitios_Tutristicos.dart';
 import 'Pages/Splach_Page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -54,7 +48,7 @@ class MyApp extends StatelessWidget {
         ),
         child: Scaffold(
           backgroundColor: Colors.transparent,
-          body: const HomePage(),
+          body: const SplashPage(),
         ),
       ),
     );
